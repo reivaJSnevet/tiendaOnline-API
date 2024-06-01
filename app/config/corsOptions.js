@@ -1,7 +1,7 @@
 // Opciones de CORS
 const corsOptions = {
     origin: function (origin, callback) {
-      const whitelist = ['http://localhost:3000', 'http://localhost:5173'];
+      const whitelist = ['http://localhost:3000', 'http://localhost:5173', 'https://tienda-online-topaz.vercel.app/'];
       if (whitelist.indexOf(origin) !== -1 || !origin) {
         callback(null, true);
       } else {
