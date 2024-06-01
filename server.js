@@ -42,11 +42,7 @@ app.listen(PORT, () => {
 
 db.authenticate().then(() => {
     console.log('Database connected...');
-    db.sync({ force: false }).then(() => {
-      console.log('Tables created...');
-    });
+    seedDatabase();
   }).catch(err => {
     console.log('Error: ' + err);
   });
-
-seedDatabase();
