@@ -1,12 +1,7 @@
 // Opciones de CORS
 const corsOptions = {
     origin: function (origin, callback) {
-      const whitelist = ['http://localhost:3000', 'http://localhost:5173', 'https://tienda-online-topaz.vercel.app/'];
-      if (whitelist.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
+     callback(null, true);
     },
     optionsSuccessStatus: 200, // Algunos navegadores más antiguos (IE11, varios SmartTVs) necesitan 200
     credentials: true, // Permitir configurar cookies de respuesta
