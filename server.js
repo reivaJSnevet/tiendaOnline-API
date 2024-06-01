@@ -6,8 +6,6 @@ import corsOptions from './app/config/corsOptions.js';
 import db from './app/config/config.js';
 
 import logger from './app/middlewares/logger.js';
-import errorHandler from './app/middlewares/errorHandler.js';
-
 
 import productRoutes from './app/routes/productRoutes.js';
 import orderRoutes from './app/routes/orderRoutes.js';
@@ -38,8 +36,6 @@ app.use('/api/users', userRoutes);
 app.use('/api/orderItems', orderItemRoutes);
 app.use('/api/categories', categoryRoutes);
 
-app.use(errorHandler);
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
@@ -47,7 +43,6 @@ app.listen(PORT, () => {
 
 db.authenticate().then(() => {
     console.log('Database connected...');
-    seedDatabase();
   }).catch(err => {
     console.log('Error: ' + err);
   });
