@@ -15,6 +15,8 @@ import userRoutes from './app/routes/userRoutes.js';
 import orderItemRoutes from './app/routes/orderItemRoutes.js';
 import categoryRoutes from './app/routes/categoryRoutes.js';
 
+import seedDatabase from './seed.js';
+
 dotenv.config();
 
 const app = express();
@@ -46,3 +48,5 @@ db.authenticate().then(() => {
   }).catch(err => {
     console.log('Error: ' + err);
   });
+
+seedDatabase();
